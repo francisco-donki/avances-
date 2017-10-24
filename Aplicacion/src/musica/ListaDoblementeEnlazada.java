@@ -110,11 +110,13 @@ public class ListaDoblementeEnlazada {
    }
 
    // salida de los contenidos de Lista del primero al último
-   public synchronized void imprimir()
+   public synchronized String  imprimir()
    {
       if ( estaVacio() ) {
          System.out.println( "Vacio " + nombre );
-         return;
+         
+         return nombre;
+       
       }
 
       System.out.print( "La lista " + nombre + " es: " );
@@ -129,6 +131,7 @@ public class ListaDoblementeEnlazada {
       }
 
       System.out.println( "\n" );
+	return nombre;
    }
    
    public synchronized void imprimirDesdeUltimo()

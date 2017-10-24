@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.TextArea;
 
 public class Principal extends JFrame {
 
@@ -68,8 +69,12 @@ public class Principal extends JFrame {
 				
 			}
 		});
-		Agregar.setBounds(298, 106, 126, 23);
+		Agregar.setBounds(127, 227, 126, 23);
 		contentPane.add(Agregar);
+		
+		TextArea resultado = new TextArea();
+		resultado.setBounds(10, 85, 398, 103);
+		contentPane.add(resultado);
 		
 		musica = new JTextField();
 		musica.setBounds(78, 28, 86, 20);
@@ -121,12 +126,8 @@ public class Principal extends JFrame {
 		});
 		
 	
-		imprimir.setBounds(57, 227, 107, 23);
+		imprimir.setBounds(0, 194, 107, 23);
 		contentPane.add(imprimir);
-		
-		JTextPane resultado = new JTextPane();
-		resultado.setBounds(22, 106, 266, 110);
-		contentPane.add(resultado);
 		
 		JButton atras = new JButton("agregar atras");
 		atras.addMouseListener(new MouseAdapter() {
@@ -141,7 +142,7 @@ public class Principal extends JFrame {
 				
 			}
 		});
-		atras.setBounds(298, 140, 100, 23);
+		atras.setBounds(263, 227, 100, 23);
 		contentPane.add(atras);
 		
 		JButton borrarD = new JButton("borrar adelante ");
@@ -155,11 +156,13 @@ public class Principal extends JFrame {
 				
 			}
 		});
-		borrarD.setBounds(298, 208, 111, 23);
+		borrarD.setBounds(117, 194, 111, 23);
 		contentPane.add(borrarD);
 		
 		JButton borrarA = new JButton("borrar atras ");
-		borrarA.setBounds(298, 174, 107, 23);
+		borrarA.setBounds(256, 194, 107, 23);
 		contentPane.add(borrarA);
+		
+		
 	}
 }
