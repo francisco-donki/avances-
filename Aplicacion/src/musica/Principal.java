@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Principal extends JFrame {
 
@@ -48,20 +50,25 @@ public class Principal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton Agregar = new JButton("agregar nodo ");
+		ListaDoblementeEnlazada miLista=new ListaDoblementeEnlazada();
+		
+		JButton Agregar = new JButton("agregar adelante");
 		Agregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{//boton agregar
 				
-				ListaDoblementeEnlazada miLista=new ListaDoblementeEnlazada();
 				
-				miLista.setmusica(musica.getText());
+				
+				miLista.insertarDelante(musica.getText());
+				miLista.insertarDelante(genero.getText());
+				miLista.insertarDelante(artista.getText());
+				miLista.insertarDelante(album.getText());
 				
 				
 				
 			}
 		});
-		Agregar.setBounds(164, 106, 114, 23);
+		Agregar.setBounds(298, 106, 126, 23);
 		contentPane.add(Agregar);
 		
 		musica = new JTextField();
@@ -105,19 +112,54 @@ public class Principal extends JFrame {
 		contentPane.add(lblArtista);
 		
 		JButton imprimir = new JButton("imprimir lista");
-		imprimir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{//boton imprimir lista. 
+		imprimir.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e)
+			{
+				resultado.setText(miLista.imprimir());
+			}
+		});
+		
+	
+		imprimir.setBounds(57, 227, 107, 23);
+		contentPane.add(imprimir);
+		
+		JTextPane resultado = new JTextPane();
+		resultado.setBounds(22, 106, 266, 110);
+		contentPane.add(resultado);
+		
+		JButton atras = new JButton("agregar atras");
+		atras.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) 
+			{//agregar nodo trasero 
 				
+				miLista.insertarDetras(musica.getText());
+				miLista.insertarDetras(genero.getText());
+				miLista.insertarDetras(artista.getText());
+				miLista.insertarDetras(album.getText());
+				
+			}
+		});
+		atras.setBounds(298, 140, 100, 23);
+		contentPane.add(atras);
+		
+		JButton borrarD = new JButton("borrar adelante ");
+		borrarD.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e)
+			{//borrar nodo para adelante 
+				
+				Object elementoRemovido=miLista.removerDeDelante();
 				
 				
 			}
 		});
-		imprimir.setBounds(10, 227, 107, 23);
-		contentPane.add(imprimir);
+		borrarD.setBounds(298, 208, 111, 23);
+		contentPane.add(borrarD);
 		
-		JTextPane resultado = new JTextPane();
-		resultado.setBounds(78, 140, 264, 76);
-		contentPane.add(resultado);
+		JButton borrarA = new JButton("borrar atras ");
+		borrarA.setBounds(298, 174, 107, 23);
+		contentPane.add(borrarA);
 	}
 }
