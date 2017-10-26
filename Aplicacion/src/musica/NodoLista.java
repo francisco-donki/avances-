@@ -19,7 +19,7 @@ class NodoLista {
    // Constructor para crear a NodoLista
    // que se refiere al objeto
    // y al proximo NodoLista en Lista
-   NodoLista( Object objeto, NodoLista prox, NodoLista ant)
+    NodoLista( Object objeto, NodoLista prox, NodoLista ant)
    {
       dato = objeto;    
       nodoProximo = prox;

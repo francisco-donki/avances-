@@ -69,7 +69,7 @@ public class Principal extends JFrame {
 				
 			}
 		});
-		Agregar.setBounds(127, 227, 126, 23);
+		Agregar.setBounds(78, 227, 126, 23);
 		contentPane.add(Agregar);
 		
 		TextArea resultado = new TextArea();
@@ -121,7 +121,7 @@ public class Principal extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e)
 			{
-				resultado.setText(miLista.imprimir());
+				resultado.setText(miLista.imprimir().toString());
 			}
 		});
 		
@@ -137,12 +137,13 @@ public class Principal extends JFrame {
 				
 				miLista.insertarDetras(musica.getText());
 				miLista.insertarDetras(genero.getText());
-				miLista.insertarDetras(artista.getText());
 				miLista.insertarDetras(album.getText());
+				miLista.insertarDetras(artista.getText());
+				
 				
 			}
 		});
-		atras.setBounds(263, 227, 100, 23);
+		atras.setBounds(214, 227, 128, 23);
 		contentPane.add(atras);
 		
 		JButton borrarD = new JButton("borrar adelante ");
@@ -160,6 +161,14 @@ public class Principal extends JFrame {
 		contentPane.add(borrarD);
 		
 		JButton borrarA = new JButton("borrar atras ");
+		borrarA.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) 
+			{
+				Object elementoRemovido=miLista.removerDeDetras();
+			    
+			}
+		});
 		borrarA.setBounds(256, 194, 107, 23);
 		contentPane.add(borrarA);
 		

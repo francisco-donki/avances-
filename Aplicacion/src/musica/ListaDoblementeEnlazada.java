@@ -110,50 +110,46 @@ public class ListaDoblementeEnlazada {
    }
 
    // salida de los contenidos de Lista del primero al último
-   public synchronized String  imprimir()
-   {
-      if ( estaVacio() ) {
-         System.out.println( "Vacio " + nombre );
-         
-         return nombre;
-       
-      }
-
-      System.out.print( "La lista " + nombre + " es: " );
-
-      NodoLista actual = primerNodo;
-
-      // mientras no es el final de la lista, se muestra
-      // el dato del nodo actual
-      while ( actual != null ) {
-         System.out.print( actual.dato.toString() + " " );
-         actual = actual.nodoProximo;
-      }
-
-      System.out.println( "\n" );
-	return nombre;
+   
+   public StringBuilder imprimir(){
+	   StringBuilder cadena=new StringBuilder();
+	  
+	   NodoLista temp=primerNodo;
+	cadena.append("NULL ---->");
+	   while(temp!=null){
+		   
+		   cadena.append(temp.dato.toString());
+		   cadena.append("----->");
+		   temp=temp.nodoProximo;  
+	   }
+	   
+	   cadena.append("null");
+	   return cadena;
+	   
    }
    
-   public synchronized void imprimirDesdeUltimo()
-   {
-      if ( estaVacio() ) {
-         System.out.println( "Vacio " + nombre );
-         return;
-      }
-
-      System.out.print( "La lista " + nombre + " es: " );
-
-      NodoLista actual = ultimoNodo;
-
-      // mientras no es el final de la lista, se muestra
-      // el dato del nodo actual
-      while ( actual != null ) {
-         System.out.print( actual.dato.toString() + " " );
-         actual = actual.nodoAnterior;
-      }
-
-      System.out.println( "\n" );
-   }   
-
+   public StringBuilder imprimirDesdeUltimo(){
+	   StringBuilder cadena=new StringBuilder();
+	   
+	   if ( estaVacio() ) {
+	    	  cadena.append("lista vacia");
+	      }
+	  
+	   NodoLista temp=primerNodo;
+	cadena.append("NULL <---->");
+	   while(temp!=null){
+		   
+		   cadena.append(temp.dato.toString());
+		   cadena.append("<----->");
+		   temp=temp.nodoAnterior;  
+	   }
+	   
+	   cadena.append("null");
+	   return cadena;
+	   
+   }
+   
+   
+   
 }  // fin de la clase Lista
 
