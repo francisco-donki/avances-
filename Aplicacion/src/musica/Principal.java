@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
@@ -58,7 +60,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{//boton agregar
 				
-				
+				JOptionPane.showInputDialog(null,"nodo agregado exitosamente");
 				
 				miLista.insertarDelante("musica "+musica.getText()+"  genero: "+ genero.getText()+
 						"  album: "+album.getText()+"  artista: "+ artista.getText());
@@ -133,6 +135,7 @@ public class Principal extends JFrame {
 			public void mouseClicked(MouseEvent e) 
 			{//agregar nodo trasero 
 				
+				JOptionPane.showInputDialog(null,"nodo agregado exitosamente");
 				
 				miLista.insertarDetras("musica "+musica.getText()+"  genero: "+ genero.getText()+
 						"  album: "+album.getText()+"  artista: "+ artista.getText());
