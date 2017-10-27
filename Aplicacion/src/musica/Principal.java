@@ -60,11 +60,8 @@ public class Principal extends JFrame {
 				
 				
 				
-				miLista.insertarDelante(musica.getText());
-				miLista.insertarDelante(genero.getText());
-				miLista.insertarDelante(artista.getText());
-				miLista.insertarDelante(album.getText());
-				
+				miLista.insertarDelante("musica "+musica.getText()+"  genero: "+ genero.getText()+
+						"  album: "+album.getText()+"  artista: "+ artista.getText());
 				
 				
 			}
@@ -135,11 +132,9 @@ public class Principal extends JFrame {
 			public void mouseClicked(MouseEvent e) 
 			{//agregar nodo trasero 
 				
-				miLista.insertarDetras(musica.getText());
-				miLista.insertarDetras(genero.getText());
-				miLista.insertarDetras(album.getText());
-				miLista.insertarDetras(artista.getText());
 				
+				miLista.insertarDetras("musica "+musica.getText()+"  genero: "+ genero.getText()+
+						"  album: "+album.getText()+"  artista: "+ artista.getText());
 				
 			}
 		});
