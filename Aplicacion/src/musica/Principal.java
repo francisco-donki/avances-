@@ -45,7 +45,7 @@ public class Principal extends JFrame {
 	 */
 	public Principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 548, 323);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -64,9 +64,10 @@ public class Principal extends JFrame {
 						"  album: "+album.getText()+"  artista: "+ artista.getText());
 				
 				
+				
 			}
 		});
-		Agregar.setBounds(78, 227, 126, 23);
+		Agregar.setBounds(22, 227, 126, 23);
 		contentPane.add(Agregar);
 		
 		TextArea resultado = new TextArea();
@@ -123,7 +124,7 @@ public class Principal extends JFrame {
 		});
 		
 	
-		imprimir.setBounds(0, 194, 107, 23);
+		imprimir.setBounds(363, 193, 120, 23);
 		contentPane.add(imprimir);
 		
 		JButton atras = new JButton("agregar atras");
@@ -138,7 +139,7 @@ public class Principal extends JFrame {
 				
 			}
 		});
-		atras.setBounds(214, 227, 128, 23);
+		atras.setBounds(200, 227, 128, 23);
 		contentPane.add(atras);
 		
 		JButton borrarD = new JButton("borrar adelante ");
@@ -152,7 +153,7 @@ public class Principal extends JFrame {
 				
 			}
 		});
-		borrarD.setBounds(117, 194, 111, 23);
+		borrarD.setBounds(20, 193, 111, 23);
 		contentPane.add(borrarD);
 		
 		JButton borrarA = new JButton("borrar atras ");
@@ -164,8 +165,21 @@ public class Principal extends JFrame {
 			    
 			}
 		});
-		borrarA.setBounds(256, 194, 107, 23);
+		borrarA.setBounds(200, 193, 107, 23);
 		contentPane.add(borrarA);
+		
+		JButton btnImprimirAtras = new JButton("imprimir atras");
+		btnImprimirAtras.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) 
+			{
+				
+				resultado.setText(miLista.imprimirDesdeUltimo().toString());
+				
+			}
+		});
+		btnImprimirAtras.setBounds(363, 227, 120, 23);
+		contentPane.add(btnImprimirAtras);
 		
 		
 	}

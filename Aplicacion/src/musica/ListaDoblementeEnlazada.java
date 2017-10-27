@@ -119,11 +119,11 @@ public class ListaDoblementeEnlazada {
 	   while(temp!=null){
 		   
 		   cadena.append(temp.dato.toString());
-		   cadena.append("----->");
+		   cadena.append("<----->");
 		   temp=temp.nodoProximo;  
 	   }
 	   
-	   cadena.append("null");
+	   cadena.append("NULL");
 	   return cadena;
 	   
    }
